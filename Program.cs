@@ -36,6 +36,7 @@ do
             case "5": Console.WriteLine(IsPalindrome("")); break;
             case "6": Console.WriteLine(IsPalindromeAdvanced("")); break;
             case "7": Console.WriteLine(ChartBar(0)); break;
+            case "8": Console.WriteLine(CountSmilingFaces("")); break;
             default: break;
         }
 
@@ -152,4 +153,20 @@ string ChartBar(double number)
     else if (number >= 0.8 && number < 0.9) { return "oooooooo.."; }
     else if (number >= 0.9 && number < 1.0) { return "ooooooooo."; }
     else { return "oooooooooo"; }
+}
+int CountSmilingFaces(string input)
+{
+    Console.WriteLine("Enter some text: ");
+    input = Console.ReadLine()!;
+
+    int count = 0;
+    for (int i = 0; i < input.Length - 2; i++)
+    {
+        if (input.Substring(i, 3) == ":-)")
+        {
+            count++;
+        }
+    }
+    return count;
+
 }
